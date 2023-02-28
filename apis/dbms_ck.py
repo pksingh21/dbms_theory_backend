@@ -299,15 +299,15 @@ def printedges(fds):
         print(input+"->"+output, end="  ")
     print("")
 
-def verify_FDs(original_relation, original_fds, decomposed_relations):
-    # Check if the FDs are preserved in each 3NF relation
-    for relation in decomposed_relations:
-        for X, A in original_fds.items():
-            if set(X) <= set(relation["left"]):
-                closure = compute_closure(X, relation, original_fds)
-                if set(A) != closure.intersection(set(A)):
-                    return False
-    return True
+# def verify_FDs(original_relation, original_fds, decomposed_relations):
+#     # Check if the FDs are preserved in each 3NF relation
+#     for relation in decomposed_relations:
+#         for X, A in original_fds.items():
+#             if set(X) <= set(relation["left"]):
+#                 closure = compute_closure(X, relation, original_fds)
+#                 if set(A) != closure.intersection(set(A)):
+#                     return False
+#     return True
 
 def LJ_tester(p_relation,c_relation):
     plist = list(p_relation[0]["attributes"])

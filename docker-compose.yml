@@ -1,3 +1,4 @@
+version: '3'
 services:
   adminer:
     image: adminer
@@ -6,6 +7,7 @@ services:
       - 8080:8080
   dbPostgres:
     image: postgres
+    container_name: dbPostgresv1
     restart: always
     ports:
       - 5432:5432
@@ -13,3 +15,23 @@ services:
       POSTGRES_USER: root
       POSTGRES_PASSWORD: changeme
       POSTGRES_DB: mydb
+  actualBackend:
+    image: dbms-theory-backend:v1
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - 8000:8000
+    depends_on:
+      - dbPostgres
+  actualFrontend:
+    image: dbms-theory-frontend:v1
+    build:
+      context: ../../DBMSTheoryAssignmentFrontEnd/dbms-theory-assignment-frontend/
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - 3000:3000
+    depends_on:
+      - actualBackend

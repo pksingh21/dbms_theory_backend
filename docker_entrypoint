@@ -1,0 +1,8 @@
+#!/bin/bash
+set -eu
+
+# Run Python migration command
+python3 manage.py migrate
+
+# Run Uvicorn
+python3 -m uvicorn --host 0.0.0.0 --port 8000 dbms_theory_backend.asgi:application
