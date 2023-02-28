@@ -378,44 +378,44 @@ fds = [
 #     {'left': ['E'], 'right': ['F', 'G']},
 #     {'left': ['A', 'E'], 'right': ['H']}
 # ]
-# output = ''.join(str(num) for num in attributes)
-# print("R(", output, ") ", end="")
-# printedges(fds)
-# candidate_keys = find_candidate_keys(attributes, fds)
-# print(candidate_keys)
+output = ''.join(str(num) for num in attributes)
+print("R(", output, ") ", end="")
+printedges(fds)
+candidate_keys = find_candidate_keys(attributes, fds)
+print(candidate_keys)
 
-# prime_attributes = find_prime_attributes(candidate_keys)
-# print("Prime Attributes", prime_attributes)
+prime_attributes = find_prime_attributes(candidate_keys)
+print("Prime Attributes", prime_attributes)
 
-# non_prime_attributes = set(attributes) - prime_attributes
-# # print("Non Prime Attributes",non_prime_attributes)
+non_prime_attributes = set(attributes) - prime_attributes
+# print("Non Prime Attributes",non_prime_attributes)
 
-# relation_1nf = [{"attributes":attributes,"fds":fds,"candidate_keys":candidate_keys,"prime_attributes":prime_attributes,"non_prime_attributes":non_prime_attributes}]
+relation_1nf = [{"attributes":attributes,"fds":fds,"candidate_keys":candidate_keys,"prime_attributes":prime_attributes,"non_prime_attributes":non_prime_attributes}]
 
-# relation_2nf = normalize_to_2nf(relation_1nf)
-# print("\nconverted to 2NF\n\n Relations :=> ",relation_2nf,"\n")
-# for i in range(0, len(relation_2nf)):
-#     output = ''.join(relation_2nf[i]["attributes"])
-#     print("R"+str(i+1)+"("+output+")", end=" ")
-#     printedges(relation_2nf[i]["fds"])
-
-
-# relation_3nf = normalize_to_3nf(relation_2nf)
-# print("\nconverted to 3NF\n\n Relations :=> ",relation_3nf,"\n")
-# for i in range(0, len(relation_3nf)):
-#     output = ''.join(relation_3nf[i]["attributes"])
-#     print("R"+str(i+1)+"("+output+")", end=" ")
-#     printedges(relation_3nf[i]["fds"])
+relation_2nf = normalize_to_2nf(relation_1nf)
+print("\nconverted to 2NF\n\n Relations :=> ",relation_2nf,"\n")
+for i in range(0, len(relation_2nf)):
+    output = ''.join(relation_2nf[i]["attributes"])
+    print("R"+str(i+1)+"("+output+")", end=" ")
+    printedges(relation_2nf[i]["fds"])
 
 
+relation_3nf = normalize_to_3nf(relation_2nf)
+print("\nconverted to 3NF\n\n Relations :=> ",relation_3nf,"\n")
+for i in range(0, len(relation_3nf)):
+    output = ''.join(relation_3nf[i]["attributes"])
+    print("R"+str(i+1)+"("+output+")", end=" ")
+    printedges(relation_3nf[i]["fds"])
 
-# # violated_index_bcnf = []
-# relation_bcnf= normalize_to_bcnf(relation_3nf)
-# print("\nconverted to BCNF\n\n Relations :=> ",relation_3nf,"\n")
-# for i in range(0, len(relation_bcnf)):
-#     output = ''.join(relation_bcnf[i]["attributes"])
-#     print("R"+str(i+1)+"("+output+")", end=" ")
-#     printedges(relation_bcnf[i]["fds"])
+
+
+# violated_index_bcnf = []
+relation_bcnf= normalize_to_bcnf(relation_3nf)
+print("\nconverted to BCNF\n\n Relations :=> ",relation_3nf,"\n")
+for i in range(0, len(relation_bcnf)):
+    output = ''.join(relation_bcnf[i]["attributes"])
+    print("R"+str(i+1)+"("+output+")", end=" ")
+    printedges(relation_bcnf[i]["fds"])
 
 
 # print(LJ_tester(relation_1nf,relation_bcnf))
