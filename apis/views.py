@@ -66,12 +66,14 @@ class SetOfAttributesViewSet(viewsets.ModelViewSet):
         candidate_keys = BuisnessLogicInstance.calculateCandidateKeys(
             attributes, functionalDependencyArrayNotSETData
         )
-        prime_attributes = BuisnessLogicInstance.findPrimeAttributes(candidate_keys)
+        prime_attributes = BuisnessLogicInstance.findPrimeAttributes(
+            candidate_keys)
         non_prime_attributes = BuisnessLogicInstance.findNonPrimeAttributes(
             attributes=attributes, prime_attributes=prime_attributes
         )
         response_object = {}
-        if query == "Find Minimal Cover":
+
+        if query == "Find Minimal Cover/Find 3NF Other Method":
             # exec minimal cover functions
             print("Find Minimal Cover")
             minimal_cover = BuisnessLogicInstance.findMinimalCover(
@@ -102,8 +104,10 @@ class SetOfAttributesViewSet(viewsets.ModelViewSet):
                 prime_attributes=prime_attributes,
                 non_prime_attributes=non_prime_attributes,
             )
-            NFForm_2 = BuisnessLogicInstance.return2NFForm(relation_1NF=NFForm_1)
-            NFForm_3 = BuisnessLogicInstance.return3NFForm(relation_2NF=NFForm_2)
+            NFForm_2 = BuisnessLogicInstance.return2NFForm(
+                relation_1NF=NFForm_1)
+            NFForm_3 = BuisnessLogicInstance.return3NFForm(
+                relation_2NF=NFForm_2)
             BCNF_Form = BuisnessLogicInstance.returnBCNF(relation_3NF=NFForm_3)
             LossLessJoinMatrix = BuisnessLogicInstance.LossLessJoinTester(
                 relation_1NF=NFForm_1,
