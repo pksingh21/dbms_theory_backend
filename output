@@ -1,0 +1,38 @@
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name    
+tcp        0      0 127.0.0.1:63525         0.0.0.0:*               LISTEN      2342/qbittorrent    
+tcp        0      0 0.0.0.0:3000            0.0.0.0:*               LISTEN      98782/docker-proxy  
+tcp        0      0 0.0.0.0:3001            0.0.0.0:*               LISTEN      62768/docker-proxy  
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      555/sshd: /usr/bin/ 
+tcp        0      0 0.0.0.0:8000            0.0.0.0:*               LISTEN      98992/docker-proxy  
+tcp        0      0 0.0.0.0:8080            0.0.0.0:*               LISTEN      98379/docker-proxy  
+tcp        0      0 127.0.0.1:44021         0.0.0.0:*               LISTEN      567/containerd      
+tcp        0      0 10.10.75.74:63525       0.0.0.0:*               LISTEN      2342/qbittorrent    
+tcp        0      0 0.0.0.0:5432            0.0.0.0:*               LISTEN      98398/docker-proxy  
+tcp        0      0 127.0.0.1:33949         0.0.0.0:*               LISTEN      58195/code          
+tcp6       0      0 :::3000                 :::*                    LISTEN      98789/docker-proxy  
+tcp6       0      0 :::3001                 :::*                    LISTEN      62774/docker-proxy  
+tcp6       0      0 :::1716                 :::*                    LISTEN      1718/kdeconnectd    
+tcp6       0      0 :::22                   :::*                    LISTEN      555/sshd: /usr/bin/ 
+tcp6       0      0 :::8000                 :::*                    LISTEN      98999/docker-proxy  
+tcp6       0      0 :::8080                 :::*                    LISTEN      98385/docker-proxy  
+tcp6       0      0 ::1:63525               :::*                    LISTEN      2342/qbittorrent    
+tcp6       0      0 fe80::24cb:f171:4:63525 :::*                    LISTEN      2342/qbittorrent    
+tcp6       0      0 :::5432                 :::*                    LISTEN      98405/docker-proxy  
+tcp6       0      0 127.0.0.1:9614          :::*                    LISTEN      1723/java           
+udp        0      0 224.0.0.251:5353        0.0.0.0:*                           2483/networkcheck.k 
+udp        0      0 224.0.0.251:5353        0.0.0.0:*                           2483/networkcheck.k 
+udp        0      0 0.0.0.0:5353            0.0.0.0:*                           491/avahi-daemon: r 
+udp        0      0 10.10.75.74:63525       0.0.0.0:*                           2342/qbittorrent    
+udp        0      0 127.0.0.1:63525         0.0.0.0:*                           2342/qbittorrent    
+udp        0      0 0.0.0.0:6771            0.0.0.0:*                           2342/qbittorrent    
+udp        0      0 0.0.0.0:6771            0.0.0.0:*                           2342/qbittorrent    
+udp        0      0 10.10.75.74:40060       0.0.0.0:*                           2342/qbittorrent    
+udp        0      0 0.0.0.0:50594           0.0.0.0:*                           491/avahi-daemon: r 
+udp6       0      0 :::5353                 :::*                                491/avahi-daemon: r 
+udp6       0      0 fe80::24cb:f171:4:63525 :::*                                2342/qbittorrent    
+udp6       0      0 ::1:63525               :::*                                2342/qbittorrent    
+udp6       0      0 :::6771                 :::*                                2342/qbittorrent    
+udp6       0      0 :::6771                 :::*                                2342/qbittorrent    
+udp6       0      0 :::56655                :::*                                491/avahi-daemon: r 
+udp6       0      0 :::1716                 :::*                                1718/kdeconnectd    

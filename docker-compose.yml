@@ -16,22 +16,23 @@ services:
       POSTGRES_PASSWORD: changeme
       POSTGRES_DB: mydb
   actualBackend:
-    image: dbms-theory-backend:v1
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: prateekkumarsingh/dbms-theory-backend:v5
     restart: always
     ports:
       - 8000:8000
     depends_on:
       - dbPostgres
   actualFrontend:
-    image: dbms-theory-frontend:v1
-    build:
-      context: ../../DBMSTheoryAssignmentFrontEnd/dbms-theory-assignment-frontend/
-      dockerfile: Dockerfile
+    image: prateekkumarsingh/dbms-theory-frontend:v5
     restart: always
     ports:
       - 3000:3000
     depends_on:
+      - actualBackend
+  ankitFrontend:
+     image: prateekkumarsingh/docker-react-v1-ankit-on-fire:v1
+     restart: always
+     ports:
+      - 3001:80
+     depends_on:
       - actualBackend

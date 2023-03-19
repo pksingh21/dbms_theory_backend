@@ -99,7 +99,8 @@ class SetOfAttributesViewSet(viewsets.ModelViewSet):
         ):
             NFForm_1 = BuisnessLogicInstance.return1NFForm(
                 attributes=attributes,
-                fds=functionalDependencyArrayNotSETData,
+                fds=BuisnessLogicInstance.findMinimalCover(
+                    attributes, functionalDependencyArrayNotSETData),
                 cadidate_keys=candidate_keys,
                 prime_attributes=prime_attributes,
                 non_prime_attributes=non_prime_attributes,

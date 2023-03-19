@@ -2,22 +2,15 @@ from django.db import models
 from django.contrib.postgres.fields import ArrayField
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from .dbms_ck import (
-    find_candidate_keys,
-    find_prime_attributes,
-    normalize_to_2nf,
-    normalize_to_3nf,
-    normalize_to_bcnf,
-    LJ_tester,
-    is_in_2NF,
-    is_in_3NF,
-    is_in_BCNF,
-)
-from .timepass import minimal_cover
+
+
+from .main_logic import (
+    find_candidate_keys, find_prime_attributes, normalize_to_2nf, normalize_to_3nf, normalize_to_bcnf, LJ_tester, is_in_2NF, is_in_3NF, is_in_BCNF, minimal_cover)
 
 
 class FunctionalDependency(models.Model):
-    left = ArrayField(models.CharField(max_length=1000), default=list, max_length=10000)
+    left = ArrayField(models.CharField(max_length=1000),
+                      default=list, max_length=10000)
     right = ArrayField(
         models.CharField(max_length=1000), default=list, max_length=10000
     )
@@ -70,7 +63,7 @@ class BuisnessLogic:
     def findMinimalCover(self, attributes, fds):
         return minimal_cover(attributes, fds)
 
-    def whichNormalForm(self,prime_attributes, non_prime_attributes, candidate_keys, fds):
+    def whichNormalForm(self, prime_attributes, non_prime_attributes, candidate_keys, fds):
         return {
             "2NF": is_in_2NF(
                 prime_attributes, non_prime_attributes, candidate_keys, fds
